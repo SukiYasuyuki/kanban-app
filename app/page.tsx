@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Kanban } from 'lucide-react';
 
 import { BoardCreationDialog } from '@/components/board-creation-dialog';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { getBoards } from '@/app/actions/boards';
 
 export default async function Home() {
@@ -15,7 +16,10 @@ export default async function Home() {
             <Kanban className="h-8 w-8 text-primary" />
             <h1 className="text-3xl font-bold">Kanban Boards</h1>
           </div>
-          <BoardCreationDialog />
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <BoardCreationDialog />
+          </div>
         </div>
 
         {boards.length === 0 ? (
